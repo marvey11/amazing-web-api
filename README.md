@@ -4,6 +4,6 @@ Based on the original Amazing application, written in Python.
 
 ## Prerequisites
 
-'''
-npm install typescript --save-dev
-'''
+
+    npm install typescript --save-dev
+
