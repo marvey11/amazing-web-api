@@ -1,9 +1,12 @@
+import "reflect-metadata";
+
 import config from "config";
 import cors from "cors";
 import express from "express";
 import "reflect-metadata";
 import { useExpressServer } from "routing-controllers";
 import { createConnection } from "typeorm";
+import { WishlistController } from "./controllers";
 
 const connectionName = config.get("ormconfig.connection") as string;
 createConnection(connectionName)
@@ -16,7 +19,7 @@ createConnection(connectionName)
             routePrefix: "/api",
             classTransformer: true,
             validation: true,
-            controllers: []
+            controllers: [WishlistController]
         });
 
         const port = config.get("express.port") as number;
