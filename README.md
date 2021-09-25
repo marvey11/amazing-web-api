@@ -18,3 +18,9 @@ After cloning/downloading the repository, the dependencies need to be installed.
 # when not using yarn, 'npm install' can be used alternatively
 yarn install
 ```
+
+If only the run-time dependencies are needed (and not the development dependencies listed under `devDependencies` in `package.json`), the following command can be used instead:
+
+```shell
+yarn install --production
+```
