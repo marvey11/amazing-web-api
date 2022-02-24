@@ -1,6 +1,7 @@
 import { IsString } from "class-validator";
 import { Column, Entity, OneToMany, PrimaryColumn } from "typeorm";
-import { WishlistItem } from ".";
+
+import { WishlistItem } from "./wishlist-item.entity";
 
 @Entity({ name: "wishlists" })
 class Wishlist {

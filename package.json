@@ -9,12 +9,12 @@
   "main": "build/index.js",
   "license": "MIT",
   "scripts": {
+    "start": "ts-node-dev src/index.ts",
     "build": "tsc",
     "lint": "eslint --ext .ts src/",
     "lint:fix": "eslint --fix --ext .ts src/",
     "prettier:check": "prettier --check \"src/**/*.ts\"",
-    "prettier:write": "prettier --write \"src/**/*.ts\"",
-    "start-dev": "ts-node-dev src/index.ts"
+    "prettier:write": "prettier --write \"src/**/*.ts\""
   },
   "dependencies": {
     "class-transformer": "0.3.1",
