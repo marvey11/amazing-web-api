@@ -10,7 +10,8 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "lint": "eslint --fix --ext .ts src/",
+    "lint": "eslint --ext .ts src/",
+    "lint:fix": "eslint --fix --ext .ts src/",
     "prettier:check": "prettier --check \"src/**/*.ts\"",
     "prettier:write": "prettier --write \"src/**/*.ts\"",
     "start-dev": "ts-node-dev src/index.ts"
