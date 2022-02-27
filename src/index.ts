@@ -1,10 +1,7 @@
-import "reflect-metadata";
-
-import bodyParser from "body-parser";
 import config from "config";
 import cors from "cors";
 import express from "express";
-
+import "reflect-metadata";
 import { useExpressServer } from "routing-controllers";
 import { createConnection } from "typeorm";
 
@@ -13,7 +10,7 @@ createConnection(connectionName)
     .then(() => {
         const app = express();
         app.use(cors());
-        app.use(bodyParser.json());
+        app.use(express.json());
 
         useExpressServer(app, {
             routePrefix: "/api",
