@@ -4,19 +4,19 @@ import { WishlistItem } from ".";
 
 @Entity({ name: "prices" })
 class PriceItem {
-    @PrimaryGeneratedColumn()
-    id!: number;
+  @PrimaryGeneratedColumn()
+  id!: number;
 
-    @ManyToOne(() => WishlistItem, (item) => item.priceItems)
-    item!: WishlistItem;
+  @ManyToOne(() => WishlistItem, (item) => item.priceItems, { onDelete: "CASCADE" })
+  item!: WishlistItem;
 
-    @Column()
-    @IsDate()
-    itemDate!: Date;
+  @Column()
+  @IsDate()
+  itemDate!: Date;
 
-    @Column()
-    @IsNumber()
-    itemPrice!: number;
+  @Column()
+  @IsNumber()
+  itemPrice!: number;
 }
 
 export { PriceItem };
