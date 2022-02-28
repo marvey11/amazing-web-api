@@ -1,20 +1,17 @@
-import { IsString } from "class-validator";
-
-class CreateWishlistItemRequest {
-    @IsString()
-    id: string;
-
-    @IsString()
-    wishlist: string;
-
-    @IsString()
-    name: string;
-
-    constructor(id: string, wishlist: string, name: string) {
-        this.id = id;
-        this.wishlist = wishlist;
-        this.name = name;
-    }
+interface GetWishlistItemOptions {
+  "with-prices"?: boolean;
 }
 
-export { CreateWishlistItemRequest };
+type CreateOrUpdateWishlistItemRequest = {
+  id: string;
+  name: string;
+  date: string;
+  price: number;
+  wishlist_id: string;
+};
+
+type DeleteWishlistItemRequest = {
+  id: string;
+};
+
+export type { CreateOrUpdateWishlistItemRequest, DeleteWishlistItemRequest, GetWishlistItemOptions };
