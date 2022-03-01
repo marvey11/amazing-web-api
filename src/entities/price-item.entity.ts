@@ -10,11 +10,11 @@ class PriceItem {
   @ManyToOne(() => WishlistItem, (item) => item.priceItems, { onDelete: "CASCADE" })
   item!: WishlistItem;
 
-  @Column()
+  @Column({ type: "datetime" })
   @IsDate()
   itemDate!: Date;
 
-  @Column()
+  @Column({ type: "decimal", precision: 12, scale: 4 })
   @IsNumber()
   itemPrice!: number;
 }
