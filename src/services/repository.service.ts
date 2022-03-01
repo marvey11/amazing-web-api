@@ -55,7 +55,7 @@ export class RepositoryService {
     if (withItems) {
       // we want the items associated to the wishlist returned as well
       // --> add a left join on the items table and additional select select statements
-      query.leftJoin("list.items", "item").addSelect(["item.id", "item.title"]);
+      query.leftJoin("list.items", "item").addSelect("item");
 
       this.addWishlistItemQueryOptions<Wishlist>(query, {
         "with-prices": withPrices,
@@ -112,7 +112,7 @@ export class RepositoryService {
   };
 
   private createBasicGetWishlistItemQuery() {
-    return this.connection.createQueryBuilder().select(["item.id", "item.title"]).from(WishlistItem, "item");
+    return this.connection.createQueryBuilder().select("item").from(WishlistItem, "item");
   }
 
   private addWishlistItemQueryOptions = <T>(query: SelectQueryBuilder<T>, options: GetWishlistItemOptions): void => {
@@ -121,7 +121,7 @@ export class RepositoryService {
     if (withPrices) {
       // returning prices only makes sense if we are already adding the items; otherwise ignoring the option
       // --> add a left join with the prices table and additional select statements
-      query.leftJoin("item.priceItems", "price").addSelect(["price.itemDate", "price.itemPrice"]);
+      query.leftJoin("item.priceItems", "price").addSelect("price");
 
       if (latestOnly) {
         // add sub-query
