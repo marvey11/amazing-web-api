@@ -1,2 +1,1 @@
-export { WishlistItemService } from "./wishlist-item.service";
-export { WishlistService } from "./wishlist.service";
+export { RepositoryService } from "./repository.service";

@@ -1,6 +1,7 @@
-interface GetWishlistItemOptions {
+type GetWishlistItemOptions = {
   "with-prices"?: boolean;
-}
+  "latest-only"?: boolean;
+};
 
 type CreateOrUpdateWishlistItemRequest = {
   id: string;

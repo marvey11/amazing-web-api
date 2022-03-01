@@ -3,19 +3,19 @@ import { StatusCodes } from "http-status-codes";
 import { Body, Delete, JsonController, Post, Put, Res } from "routing-controllers";
 import { Service } from "typedi";
 import { CreateOrUpdateWishlistItemRequest, DeleteWishlistItemRequest } from "../dtos";
-import { WishlistItemService } from "../services";
+import { RepositoryService } from "../services";
 
 @JsonController()
 @Service()
-class WishlistItemController {
-  constructor(private service: WishlistItemService) {}
+export class WishlistItemController {
+  constructor(private service: RepositoryService) {}
 
   @Post("/wishlist-items")
   async createMany(
     @Body({ required: true }) data: CreateOrUpdateWishlistItemRequest[],
     @Res() response: Response
   ): Promise<Response> {
-    return this.service.createMany(data).then(() => response.status(StatusCodes.NO_CONTENT).send());
+    return this.service.createManyWishlistItems(data).then(() => response.status(StatusCodes.NO_CONTENT).send());
   }
 
   @Put("/wishlist-items")
@@ -23,7 +23,7 @@ class WishlistItemController {
     @Body({ required: true }) data: CreateOrUpdateWishlistItemRequest[],
     @Res() response: Response
   ): Promise<Response> {
-    return this.service.updateMany(data).then(() => response.status(StatusCodes.NO_CONTENT).send());
+    return this.service.updateManyWishlistItems(data).then(() => response.status(StatusCodes.NO_CONTENT).send());
   }
 
   @Delete("/wishlist-items")
@@ -31,8 +31,6 @@ class WishlistItemController {
     @Body({ required: true }) data: DeleteWishlistItemRequest[],
     @Res() response: Response
   ): Promise<Response> {
-    return this.service.deleteMany(data).then(() => response.send());
+    return this.service.deleteManyWishlistItems(data).then(() => response.send());
   }
 }
-
-export { WishlistItemController };
