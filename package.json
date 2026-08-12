@@ -39,7 +39,7 @@
     "eslint": "^8.57.0",
     "prettier": "^3.2.5",
     "ts-node-dev": "^2.0.0",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.3"
   },
   "overrides": {
     "glob": "^10.4.5",
