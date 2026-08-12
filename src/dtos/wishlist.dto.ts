@@ -7,7 +7,7 @@ import { GetWishlistItemOptions } from "./wishlist-item.dto";
  */
 class GetWishlistOptions extends GetWishlistItemOptions {
   // transformation ensures that boolean strings are converted to actual booleans
-  @Transform((value) => [true, "true"].indexOf(value) > -1)
+  @Transform(({ value }) => [true, "true"].indexOf(value) > -1)
   "with-items": boolean;
 }
 
