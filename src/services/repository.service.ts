@@ -1,14 +1,7 @@
 import config from "config";
 import { Service } from "typedi";
-import {
-  Connection,
-  DeleteResult,
-  getConnection,
-  getRepository,
-  ObjectLiteral,
-  Repository,
-  SelectQueryBuilder
-} from "typeorm";
+import { DataSource, DeleteResult, ObjectLiteral, Repository, SelectQueryBuilder } from "typeorm";
+import { AppDataSource } from "../data-source";
 import {
   CreateOrUpdateWishlistItemRequest,
   CreateWishlistRequest,
@@ -22,17 +15,17 @@ import { PriceItem, Wishlist, WishlistItem } from "../entities";
 @Service()
 export class RepositoryService {
   private connectionName: string;
-  private connection: Connection;
+  private connection: DataSource;
 
   private wishlists: Repository<Wishlist>;
   private wishlistItems: Repository<WishlistItem>;
 
   constructor() {
     this.connectionName = config.get("ormconfig.connection") as string;
-    this.connection = getConnection(this.connectionName);
+    this.connection = AppDataSource;
 
-    this.wishlists = getRepository<Wishlist>(Wishlist, this.connectionName);
-    this.wishlistItems = getRepository<WishlistItem>(WishlistItem, this.connectionName);
+    this.wishlists = this.connection.getRepository<Wishlist>(Wishlist);
+    this.wishlistItems = this.connection.getRepository<WishlistItem>(WishlistItem);
   }
 
   getAllWishlists = async (
