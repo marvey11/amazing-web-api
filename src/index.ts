@@ -4,14 +4,13 @@ import cors from "cors";
 import express from "express";
 import { useContainer, useExpressServer } from "routing-controllers";
 import { Container } from "typedi";
-import { createConnection } from "typeorm";
+import { AppDataSource } from "./data-source";
 import { WishlistController } from "./controllers";
 import { WishlistItemController } from "./controllers/wishlist-item.controller";
 
 useContainer(Container);
 
-const connectionName = config.get("ormconfig.connection") as string;
-createConnection(connectionName)
+AppDataSource.initialize()
   .then(() => {
     const app = express();
     app.use(cors());
@@ -29,6 +28,6 @@ createConnection(connectionName)
       console.log(`Server listening on port ${port}`);
     });
   })
-  .catch((error) => {
+  .catch((error: unknown) => {
     console.log(error);
   });
