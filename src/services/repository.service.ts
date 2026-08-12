@@ -1,6 +1,14 @@
 import config from "config";
 import { Service } from "typedi";
-import { Connection, DeleteResult, getConnection, getRepository, Repository, SelectQueryBuilder } from "typeorm";
+import {
+  Connection,
+  DeleteResult,
+  getConnection,
+  getRepository,
+  ObjectLiteral,
+  Repository,
+  SelectQueryBuilder
+} from "typeorm";
 import {
   CreateOrUpdateWishlistItemRequest,
   CreateWishlistRequest,
@@ -115,7 +123,10 @@ export class RepositoryService {
     return this.connection.createQueryBuilder().select("item").from(WishlistItem, "item");
   }
 
-  private addWishlistItemQueryOptions = <T>(query: SelectQueryBuilder<T>, options: GetWishlistItemOptions): void => {
+  private addWishlistItemQueryOptions = <T extends ObjectLiteral>(
+    query: SelectQueryBuilder<T>,
+    options: GetWishlistItemOptions
+  ): void => {
     const { "with-prices": withPrices, "latest-only": latestOnly } = options;
 
     if (withPrices) {
