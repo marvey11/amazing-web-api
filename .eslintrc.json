@@ -3,18 +3,33 @@
     "es2021": true,
     "node": true
   },
-  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 2021,
     "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint"],
+  "plugins": [
+    "@typescript-eslint"
+  ],
   "rules": {
-    // these rules will also be used to auto-fix linting problems on save in VS Code
-    "comma-dangle": ["warn", "never"],
-    "no-trailing-spaces": ["warn"],
-    "quotes": ["warn", "double"],
-    "semi": ["error", "always"]
+    "comma-dangle": [
+      "warn",
+      "never"
+    ],
+    "no-trailing-spaces": [
+      "warn"
+    ],
+    "quotes": [
+      "warn",
+      "double"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ]
   }
 }

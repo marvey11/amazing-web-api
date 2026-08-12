@@ -3,10 +3,10 @@ import { Transform } from "class-transformer";
 class GetWishlistItemOptions {
   // transformations ensure that boolean strings are converted to actual booleans
 
-  @Transform((value) => [true, "true"].indexOf(value) > -1)
+  @Transform(({ value }) => [true, "true"].indexOf(value) > -1)
   "with-prices"?: boolean;
 
-  @Transform((value) => [true, "true"].indexOf(value) > -1)
+  @Transform(({ value }) => [true, "true"].indexOf(value) > -1)
   "latest-only"?: boolean;
 }
 
