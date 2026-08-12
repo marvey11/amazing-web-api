@@ -617,10 +617,10 @@ concat-stream@^2.0.0:
     readable-stream "^3.0.2"
     typedarray "^0.0.6"
 
-config@^3.3.11:
-  version "3.3.12"
-  resolved "https://registry.yarnpkg.com/config/-/config-3.3.12.tgz#a10ae66efcc3e48c1879fbb657c86c4ef6c7b25e"
-  integrity sha512-Vmx389R/QVM3foxqBzXO8t2tUikYZP64Q6vQxGrsMpREeJc/aWRnPRERXWsYzOHAumx/AOoILWe6nU3ZJL+6Sw==
+config@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/config/-/config-5.0.0.tgz#05fc37dbfe9d2f09abf876a2475007a6d7faed92"
+  integrity sha512-LaZ/Z113nYJ4YNrH13dWdHvgIehYACiJZPxFVK8ykqO+6CaMAiJ7NkyrxTPAimMJoIKn7qPrvTFzIBPgm4/SLA==
   dependencies:
     json5 "^2.2.3"
 
