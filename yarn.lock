@@ -164,10 +164,12 @@
     "@types/connect" "*"
     "@types/node" "*"
 
-"@types/config@^0.0.41":
-  version "0.0.41"
-  resolved "https://registry.yarnpkg.com/@types/config/-/config-0.0.41.tgz#c8237ab09730380801f3643beaefa077ca5f3c28"
-  integrity sha512-HjXUmIld0gwvyG8MU/17QtLzOyuMX4jbGuijmS9sWsob5xxgZ/hY9cbRCaHIHqTQ3HMLhwS3F8uXq3Bt9zgzHA==
+"@types/config@^4.4.0":
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/@types/config/-/config-4.4.0.tgz#eca99ca07594cc23551d1a7a1bf4d04f63bd238a"
+  integrity sha512-+82/thz8il6uR6mWFuMTWyC+jSXE4PIZUPmAfKUDOuvNULq3BPLM+tSKsAe3eOIOMKx5azvg3Q3JljWV9yX7aw==
+  dependencies:
+    config "*"
 
 "@types/connect@*":
   version "3.4.38"
@@ -625,7 +627,7 @@ concat-stream@^2.0.0:
     readable-stream "^3.0.2"
     typedarray "^0.0.6"
 
-config@^5.0.0:
+config@*, config@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/config/-/config-5.0.0.tgz#05fc37dbfe9d2f09abf876a2475007a6d7faed92"
   integrity sha512-LaZ/Z113nYJ4YNrH13dWdHvgIehYACiJZPxFVK8ykqO+6CaMAiJ7NkyrxTPAimMJoIKn7qPrvTFzIBPgm4/SLA==
