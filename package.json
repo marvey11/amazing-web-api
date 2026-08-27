@@ -19,7 +19,7 @@
   "dependencies": {
     "class-transformer": "^0.5.1",
     "class-validator": "^0.15.1",
-    "config": "^5.0.0",
+    "config": "^5.0.1",
     "cors": "^2.8.5",
     "express": "^5.2.1",
     "http-status-codes": "^2.3.0",
