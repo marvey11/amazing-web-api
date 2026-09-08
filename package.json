@@ -41,8 +41,9 @@
     "ts-node-dev": "^2.0.0",
     "typescript": "^6.0.3"
   },
-  "overrides": {
+  "resolutions": {
     "glob": "^10.4.5",
+    "qs": "^6.16.0",
     "uuid": "^11.1.0"
   }
 }
